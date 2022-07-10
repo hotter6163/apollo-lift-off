@@ -5,6 +5,10 @@ const typeDefs = gql`
     tracksForHome: [Track!]!
     track(id: ID!): Track
   }
+
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
   
   type Track {
     id: ID!
@@ -28,6 +32,13 @@ const typeDefs = gql`
     id: ID!
     title: String!
     length: Int
+  }
+
+  type IncrementTrackViewsResponse {
+    code: Int!
+    success: Boolean!
+    message: String!
+    track: Track
   }
 `;
 
