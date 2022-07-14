@@ -15,6 +15,11 @@ const resolvers = {
       return dataSources.trackAPI.getTrackModules(id)
     }
   },
+  Mutation: {
+    incrementTrackViews: (_, { id }, { dataSources }) => {
+      return dataSources.trackAPI.incrementTrackViews(id)
+    }
+  }
 };
 
 module.exports = resolvers;
