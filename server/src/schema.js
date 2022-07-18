@@ -15,12 +15,11 @@ const typeDefs = gql`
     title: String!
     author: Author!
     thumbnail: String
-    length: Int @deprecated(reason: "Use durationInSeconds")
+    length: Int
     modulesCount: Int
     description: String
     numberOfViews: Int
     modules: [Module!]!
-    durationInSeconds: Int
   }
 
   type Author {
@@ -32,8 +31,7 @@ const typeDefs = gql`
   type Module {
     id: ID!
     title: String!
-    length: Int @deprecated(reason: "Use durationInSeconds")
-    durationInSeconds: Int
+    length: Int
   }
 
   type IncrementTrackViewsResponse {
